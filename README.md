@@ -1,16 +1,12 @@
-# Handlebars Helpers
+express-hbs-helpers
+===================
 
-A small collection of useful helpers for [Handlebars.js](https://github.com/wycats/handlebars.js).
-
-[![Build Status](https://travis-ci.org/danharper/Handlebars-Helpers.png?branch=develop)](https://travis-ci.org/danharper/Handlebars-Helpers)
-
-This version includes a (very) large API change. Use [version 1.1.0](https://github.com/danharper/Handlebars-Helpers/tree/v1.1.0) if you'd prefer the "classic" style.
+A small collection of usefull helpers collection for [express-hbs](https://github.com/barc/express-hbs)
+and [Handlebars.js](https://github.com/wycats/handlebars.js).
 
 To use, just include `helpers.js` after you include Handlebars. Or, if you're using AMD/Node, just require the file.
 
 ## Provided Helpers
-
-The old `if_eq`, `if_gt`, `unless_gte` etc. helpers are now replaced with a much cleaner `is` helper.
 
 ### Comparisons
 
@@ -107,3 +103,4 @@ Convert new lines (`\r\n`, `\n\r`, `\r`, `\n`) to line breaks
 ```
 {{nl2br description}}
 ```
+=======
