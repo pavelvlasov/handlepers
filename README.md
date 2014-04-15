@@ -4,6 +4,8 @@ express-hbs-helpers
 A small collection of usefull helpers collection for [express-hbs](https://github.com/barc/express-hbs)
 and [Handlebars.js](https://github.com/wycats/handlebars.js).
 
+Forked from [danharper/Handlebars-Helpers](https://github.com/danharper/Handlebars-Helpers)
+
 To use, just include `helpers.js` after you include Handlebars. Or, if you're using AMD/Node, just require the file.
 
 ## Provided Helpers
