@@ -1,6 +1,12 @@
 (function (root, factory) {
     if (typeof exports === 'object') {
-        module.exports = factory(require('handlebars'));
+        var Handlebars;
+        try {
+            Handlebars = require('handlebars');
+        } catch (err) {
+            Handlebars = require('express-hbs');
+        }
+        module.exports = factory(Handlebars);
     } else if (typeof define === 'function' && define.amd) {
         define(['handlebars'], factory);
     } else {
@@ -85,6 +91,27 @@
     };
 
     Handlebars.registerHelper('is', isHelper);
+
+    Handlebars.registerHelper('with', function(context, options) {
+        if (!options) {
+            options = context;
+            context = null;
+
+            return options.fn(options.hash);
+        } else {
+            var newContext = {};
+            for (var prop in context) {
+                newContext[prop] = context[prop];
+            }
+            if (options.hash) {
+                for(var prop in options.hash) {
+                    newContext[prop] = options.hash[prop];
+                }
+            }
+
+            return options.fn(newContext);
+        }
+    });
 
     Handlebars.registerHelper('nl2br', function(text) {
         var nl2br = (text + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2');

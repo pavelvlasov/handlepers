@@ -82,6 +82,16 @@ var template = '{{#is x "same" y}} Are the same {{else}} Not the same {{/is}}';
 Handlebars.compile(template)({ x: 5, y: '5' }); // => " Not the same "
 ```
 
+### With
+You can change context of the block
+```
+{{#with newContext}} ... {{/with}}
+// or
+{{#with newContextVar=oldContextVar}} ... {{/with}}
+// or both
+{{#with newContext var1=oldVar1 var2=oldVar2}} ... {{/with}}
+```
+
 ### Logging
 
 Log one or multiple values to the console:

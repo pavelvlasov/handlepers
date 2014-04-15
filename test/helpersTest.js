@@ -150,6 +150,22 @@ describe('#is', function () {
 	});
 });
 
+describe('#with', function() {
+	it('with context argument', function() {
+		c('{{#with foo}}{{bar}}{{/with}}', {foo: {bar: 'Y'}}).should.equal('Y');
+	});
+
+	it('with hash argument', function() {
+		c('{{#with foo=bar}}{{foo}}{{/with}}{{foo}}', {foo: 'X', bar: 'Y'})
+			.should.equal('YX');
+	});
+
+	it('with both context and hash arguments', function() {
+		c('{{#with foo foo=bar}}{{foo}}{{bar}}{{/with}}', {foo: {bar: 'X'}, bar: 'Y'})
+			.should.equal('YX');
+	});
+});
+
 describe('#nl2br', function () {
 	it('Converts new lines to <br> tags', function () {
 		c('{{nl2br this}}', 'Hey\r\nThere!').should.equal('Hey<br>\r\nThere!');
