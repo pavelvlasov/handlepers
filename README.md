@@ -1,4 +1,4 @@
-express-hbs-helpers
+Handlepers
 ===================
 
 A small collection of usefull helpers collection for [express-hbs](https://github.com/barc/express-hbs)

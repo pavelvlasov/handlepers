@@ -1,5 +1,5 @@
 {
-  "name": "express-hbs-helpers",
+  "name": "handlepers",
   "version": "0.0.1",
   "description": "A small collection of useful helpers for Handlebars.js and express-hbs",
   "main": "src/helpers.js",
