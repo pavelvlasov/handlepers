@@ -1,4 +1,4 @@
-Handlepers
+Handlepers [![Build Status](https://travis-ci.org/freakycue/handlepers.svg?branch=master)](https://travis-ci.org/freakycue/handlepers)
 ===================
 
 A small collection of usefull helpers collection for [express-hbs](https://github.com/barc/express-hbs)
