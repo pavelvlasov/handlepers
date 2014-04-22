@@ -166,6 +166,24 @@ describe('#with', function() {
 	});
 });
 
+describe('switch', function() {
+	it('to right value', function() {
+		c('{{switch foo Y="Y" X="X" default="default"}}', {foo: 'X'})
+			.should.equal('X');
+	});
+
+	it('to default value, if not present', function() {
+		c('{{switch foo Y="Y" X="X" default="default"}}', {foo: 'Z'})
+			.should.equal('default');
+	});
+
+	it('returns empty, if value does not present and default is not set',
+	function() {
+		c('{{switch foo Y="Y" X="X"}}', {foo: 'Z'})
+			.should.equal('');
+	});
+});
+
 describe('#nl2br', function () {
 	it('Converts new lines to <br> tags', function () {
 		c('{{nl2br this}}', 'Hey\r\nThere!').should.equal('Hey<br>\r\nThere!');

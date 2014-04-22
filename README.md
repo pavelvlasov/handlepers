@@ -94,6 +94,12 @@ You can change context of the block
 {{#with newContext var1=oldVar1 var2=oldVar2}} ... {{/with}}
 ```
 
+### Switch
+Returns value, that matches one of hash key or default value
+```
+{{switch conditionVar X='val1' Y=var1 default='default value'}}
+```
+
 ### Logging
 
 Log one or multiple values to the console:
